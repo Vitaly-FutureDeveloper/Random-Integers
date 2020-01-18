@@ -22,3 +22,18 @@ function mt_rand(min, max){
 			return rand(min, max);
 	}
 }
+//Генератор выше - немного неудачный, поскольку с 
+//большими числами будет много итераций (рекурсий)...
+//Пока ни найдёт среднее число <от> и <до>
+
+//Удачный генератор. Можно использовать везде и любых чисел.
+function mt_rand_plus(min, max){
+	if( max > min ){
+		var arifm = max - min;
+			arifm = Math.floor(Math.random() * Math.floor(arifm));
+		return min + arifm;
+	} else {
+		console.log("Ошибка в указании данных для генератора случайных чисел");
+		return false;
+	}
+}
